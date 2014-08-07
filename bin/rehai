@@ -81,6 +81,7 @@ class Chef::Application::Rehai < Chef::Application
     # Set the new attributes, the second argument here is the list of user
     # supplied attributes from the command line or possibly a config file
     node.consume_external_attrs(ohai.data, {})
+    node.expand!()
 
     # Write back to the server
     node.save
